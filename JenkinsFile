@@ -14,6 +14,14 @@ pipeline {
             }
         }
 
+                stage('Clean') {
+            steps {
+                echo "=== Clean Stage: 開始 ==="
+                sh './gradlew clean'
+                echo "=== Clean Stage: 完了 ==="
+            }
+        }
+
         stage('Build') {
             steps {
                 echo "=== Gradle ビルド: 開始 ==="
