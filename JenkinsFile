@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "=== Checkout Stage: 開始 ==="
-                git credentialsId: "${env.GITHUB_CREDENTIAL_ID}", url: 'https://github.com/Hoshino-Koki1/iplass-skeleton-test.git', branch: 'master'
+                git credentialsId: "${env.GITHUB_CREDENTIAL_ID}", url: 'https://github.com/(アカウント名)/iplass-skeleton-test.git', branch: 'master'
                 echo "=== Checkout Stage: 完了 ==="
             }
         }
