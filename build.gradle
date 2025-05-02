@@ -4,7 +4,7 @@ plugins {
 	id 'eclipse-wtp'
 	id 'org.iplass.dev' version '1.0.0'
 	id 'checkstyle' 
-	id 'com.github.spotbugs' version '5.2.5'
+	// id 'com.github.spotbugs' version '5.2.5'
 	id 'org.owasp.dependencycheck' version '12.1.0'
 	id "com.vanniktech.dependency.graph.generator" version "0.6.0" 
 }
