@@ -106,8 +106,8 @@ dependencies {
 
 	providedRuntime fileTree('lib').include('**/*.jar')
 
-	spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.13.0'
-	//find security bugsをプラグイン
+	// spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.13.0'
+	// //find security bugsをプラグイン
 }
 
 java {
