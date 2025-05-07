@@ -1,4 +1,4 @@
-package com.example;
+// Removed package declaration to match the expected package
 
 /**
  * This class demonstrates a simple Checkstyle test.
