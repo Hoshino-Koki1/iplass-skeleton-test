@@ -15,7 +15,7 @@ ext {
 
 repositories {
 	mavenCentral()
-
+	 gradlePluginPortal()
 	if (project.hasProperty('iPLAssMavenRepoUrl')) {
 		maven {
 			url iPLAssMavenRepoUrl
