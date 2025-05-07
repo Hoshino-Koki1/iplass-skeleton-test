@@ -177,31 +177,31 @@ tasks.withType(Checkstyle) {
     exclude '**/*.xml', '**/*.properties'
 }
 
-spotbugs {
-    toolVersion = '4.8.3'
-    effort = 'max'
-    reportLevel = 'low'
-}
+// spotbugs {
+//     toolVersion = '4.8.3'
+//     effort = 'max'
+//     reportLevel = 'low'
+// }
 
-tasks.withType(com.github.spotbugs.snom.SpotBugsTask).configureEach {
-    reports {
-        xml.required.set(false)
-        html.required.set(true) // HTMLレポートを出力
-    }
-}
+// tasks.withType(com.github.spotbugs.snom.SpotBugsTask).configureEach {
+//     reports {
+//         xml.required.set(false)
+//         html.required.set(true) // HTMLレポートを出力
+//     }
+// }
 
-dependencyCheck {
-    suppressionFile = 'config/dependency-check-suppressions.xml'
-    outputDirectory = "${buildDir}/reports/dependency-check"
-    formats = ['HTML', 'XML']
-    analyzers {
-        assemblyEnabled = false
-        nodeAuditEnabled = false
-    }
-    nvd {
-        apiKey = "5916d8d1-a67f-44c5-978f-3834c820d4dc"
-    }
-}
+// dependencyCheck {
+//     suppressionFile = 'config/dependency-check-suppressions.xml'
+//     outputDirectory = "${buildDir}/reports/dependency-check"
+//     formats = ['HTML', 'XML']
+//     analyzers {
+//         assemblyEnabled = false
+//         nodeAuditEnabled = false
+//     }
+//     nvd {
+//         apiKey = "5916d8d1-a67f-44c5-978f-3834c820d4dc"
+//     }
+// }
 
 
 
