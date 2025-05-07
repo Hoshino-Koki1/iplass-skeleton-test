@@ -4,9 +4,9 @@ plugins {
 	id 'eclipse-wtp'
 	id 'org.iplass.dev' version '1.0.0'
 	id 'checkstyle' 
-	// id 'com.github.spotbugs' version '5.2.5'
-	// id 'org.owasp.dependencycheck' version '12.1.0'
-	// id "com.vanniktech.dependency.graph.generator" version "0.6.0" 
+	id 'com.github.spotbugs' version '5.2.5'
+	id 'org.owasp.dependencycheck' version '12.1.0'
+	id "com.vanniktech.dependency.graph.generator" version "0.6.0" 
 }
 
 ext {
@@ -15,7 +15,7 @@ ext {
 
 repositories {
 	mavenCentral()
-	 gradlePluginPortal()
+
 	if (project.hasProperty('iPLAssMavenRepoUrl')) {
 		maven {
 			url iPLAssMavenRepoUrl
@@ -106,8 +106,8 @@ dependencies {
 
 	providedRuntime fileTree('lib').include('**/*.jar')
 
-	// spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.13.0'
-	// //find security bugsをプラグイン
+	spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.13.0'
+	//find security bugsをプラグイン
 }
 
 java {
@@ -177,31 +177,31 @@ tasks.withType(Checkstyle) {
     exclude '**/*.xml', '**/*.properties'
 }
 
-// spotbugs {
-//     toolVersion = '4.8.3'
-//     effort = 'max'
-//     reportLevel = 'low'
-// }
+spotbugs {
+    toolVersion = '4.8.3'
+    effort = 'max'
+    reportLevel = 'low'
+}
 
-// tasks.withType(com.github.spotbugs.snom.SpotBugsTask).configureEach {
-//     reports {
-//         xml.required.set(false)
-//         html.required.set(true) // HTMLレポートを出力
-//     }
-// }
+tasks.withType(com.github.spotbugs.snom.SpotBugsTask).configureEach {
+    reports {
+        xml.required.set(false)
+        html.required.set(true) // HTMLレポートを出力
+    }
+}
 
-// dependencyCheck {
-//     suppressionFile = 'config/dependency-check-suppressions.xml'
-//     outputDirectory = "${buildDir}/reports/dependency-check"
-//     formats = ['HTML', 'XML']
-//     analyzers {
-//         assemblyEnabled = false
-//         nodeAuditEnabled = false
-//     }
-//     nvd {
-//         apiKey = "5916d8d1-a67f-44c5-978f-3834c820d4dc"
-//     }
-// }
+dependencyCheck {
+    suppressionFile = 'config/dependency-check-suppressions.xml'
+    outputDirectory = "${buildDir}/reports/dependency-check"
+    formats = ['HTML', 'XML']
+    analyzers {
+        assemblyEnabled = false
+        nodeAuditEnabled = false
+    }
+    nvd {
+        apiKey = "5916d8d1-a67f-44c5-978f-3834c820d4dc"
+    }
+}
 
 
 
